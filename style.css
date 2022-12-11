@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:sans-serif;
+    font-size: 16px;
+    height:100vh;
+
+    font-family: "Arial",serif;
+    overflow-x: hidden;
+
+    display:grid;
+    grid-template-areas: 
+    'nav nav nav'
+    'topics topics topics'
+    'season season generate-meals'
+    'recipes recipes recipes'
+    'footer footer footer';
+
+    grid-template-rows: 100px 150px 125px 500px 200px;
+    grid-template-columns: 1fr 1.fr 1fr;
+}
+
+.topics,
+.season,
+.generate-meals,
+.recipes,
+footer{
+    background:steelblue;
+    color:#fff;
+    padding:20px;
+    border:skyblue 1px solid;
+}
+
+nav{
+    grid-area:nav;
+}
+
+.topics{
+    grid-area:topics;
+}
+.season{
+    grid-area:season
+}
+.generate-meals{
+    grid-area:generate-meals
+}
+.recipes{
+    grid-area: recipes;
+}
+footer{
+    grid-area: footer;
+}
+nav{
+    background-color: #0D3B2C;
+    display: flex;
+}
+li{
+    list-style: none;
+}
+li a {
+    color: #D7D5B8;
+    text-decoration:none;
+    
+}
+.navbar{
+    min-height:70px ;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+.navbar .nav-menu{
+    align-self: center;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+
+.nav-link{
+    transition: 0.7s ease;
+}
+.nav-link:hover{
+    color:dodgerblue ;
+}
+.hamburger{
+    display: none;
+    cursor:pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin:5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #D7D5B8;
+}
+.hamburger{
+    display: block;
+}
+
+.hamburger.active .bar:nth-child(2){
+    opacity: 0;
+}
+    
+.hamburger.active .bar:nth-child(1){
+    transform:translateY(8px) rotate(45deg) ;
+}
+.hamburger.active .bar:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg) ;
+}
+
+.nav-menu{
+    position:fixed;
+    left:-100%;
+    top:70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 250px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.nav-item{
+    margin: 16px 0 ;
+}
+.nav-menu.active{
+    left:0;
+}
+.search-bar{
+    color: #D7D5B8;
+}
